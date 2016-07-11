@@ -52,7 +52,7 @@ app.config(['$routeProvider', function($routeProvider) {
 app.factory('UserService', ['$http', '$location', function($http, $location) {
     return {
         postUser: function(person) {
-          console.log('running postUser');
+          console.log(person);
             $http({
                 url: 'http://localhost:3000/api/users.json',
                 method: 'POST',
