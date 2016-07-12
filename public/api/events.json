@@ -10,43 +10,43 @@
     }
   },
   {
-    "name": "Javascript Yard Sale",
+    "name": "Pet Adoption",
     "date": "August 20, 2016",
     "location": "Charleston, SC",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "host": {
-      "name": "Codeacademy",
+      "name": "Animal Shelter",
       "num_events": 3
     }
   },
   {
-    "name": "Javascript Yard Sale",
+    "name": "Dog Walker Relay",
     "date": "August 20, 2016",
     "location": "Charleston, SC",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "host": {
-      "name": "Codeacademy",
+      "name": "Pet Helpers",
       "num_events": 3
     }
   },
   {
-    "name": "Javascript Yard Sale",
+    "name": "Date Auction",
     "date": "August 20, 2016",
     "location": "Charleston, SC",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "host": {
-      "name": "Codeacademy",
+      "name": "Blackbaud",
       "num_events": 3
     }
   },
   {
-    "name": "Javascript Yard Sale",
-    "date": "August 20, 2016",
+    "name": "Code-a-thon",
+    "date": "August 2, 2016",
     "location": "Charleston, SC",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "host": {
       "name": "Codeacademy",
-      "num_events": 3
+      "num_events": 4
     }
   },
   {
