@@ -22,6 +22,10 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'MyEventsController',
             templateUrl: 'templates/myevents.html',
         })
+        .when('/users', {
+          controller: 'LoginController',
+          templateUrl: 'templates/users.html',
+        })
 }]);
 
 app.factory('UserService', ['$http', '$location', function($http, $location) {
@@ -47,9 +51,9 @@ app.factory('UserService', ['$http', '$location', function($http, $location) {
         method: 'GET',
         url: 'http://localhost:3000/api/users.json',
     }).then(function(response) {
-        let listOfEvents = response.data;
-        console.log("object with userss", listOfEvents);
-        angular.copy(listOfEvents, eventarray)
+        let listOfUsers = response.data;
+        console.log("object with userss", listOfUsers);
+        angular.copy(listOfUsers, userarray)
     });
 
     return {

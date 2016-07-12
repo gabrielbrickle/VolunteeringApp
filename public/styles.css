@@ -2,3 +2,12 @@
   border: 1px solid #cacaca;
   padding: 1rem;
   border-radius: 3px; }
+
+.top-bar {
+  background-color: #FFDCD2; }
+
+#signin {
+  background-color: #FFDCD2; }
+
+.has-submenu {
+  background-color: #FFDCD2; }

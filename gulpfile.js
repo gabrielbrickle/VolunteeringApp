@@ -21,7 +21,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('js', function() {
-    gulp.src('./main.js')
+    gulp.src('./js/main.js')
         .pipe(browserify())
         .pipe(gulp.dest('./public'))
 

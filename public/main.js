@@ -9,11 +9,14 @@ module.exports = function(app) {
 },{}],2:[function(require,module,exports){
 module.exports = function(app) {
     app.controller('LoginController', ['UserService', '$scope', '$http', '$location', function(UserService, $scope, $http, $location) {
+        $scope.userarray = UserService.getUsers();
 
         $scope.loginClick = function() {
-          UserService.postUser($scope.name)
-          console.log('clicked')
+            UserService.postUser($scope.name)
+            console.log('clicked')
         }
+
+
     }]);
 }
 
@@ -25,10 +28,50 @@ module.exports = function(app) {
 }
 
 },{}],4:[function(require,module,exports){
+module.exports = function(app) {
+//this is the HTML el name
+app.directive('thingtodo', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/directives/events.html',
+        scope: {
+            eventname: '=info',
+        },
+        replace: true,
+      };
+});
+
+app.directive('signupbutton', function () {
+    return {
+        restrict: 'E',
+        template: '<button ngClick="">Sign Up </button>',
+        replace: true,
+    };
+});
+
+}
+
+},{}],5:[function(require,module,exports){
+module.exports = function(app) {
+app.directive('persontyping', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/directives/users.html',
+        scope: {
+            person: '=info',
+        },
+        // replace: true,
+    };
+});
+}
+
+},{}],6:[function(require,module,exports){
 let app = angular.module('Volunteer', ['ngRoute']);
 require('./controllers/login')(app);
 require('./controllers/events')(app);
 require('./controllers/myevents')(app);
+require('./directives/events')(app);
+require('./directives/users')(app);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -47,25 +90,46 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'MyEventsController',
             templateUrl: 'templates/myevents.html',
         })
+        .when('/users', {
+          controller: 'LoginController',
+          templateUrl: 'templates/users.html',
+        })
 }]);
 
 app.factory('UserService', ['$http', '$location', function($http, $location) {
-    return {
-        postUser: function(person) {
-          console.log(person);
-            $http({
-                url: 'http://localhost:3000/api/users.json',
-                method: 'POST',
-                data: {
-                    name: person,
-                    password: 0,
+    // return {
+    //     postUser: function(person) {
+    //       console.log(person);
+    //         $http({
+    //             url: 'http://localhost:3000/api/users.json',
+    //             method: 'POST',
+    //             data: {
+    //                 name: person,
+    //                 password: 0,
+    //
+    //             },
+    //         }).then(function(results) {
+    //             console.log("posted")
+    //         });
+    //     }
+    // }
+    let userarray = [];
 
-                },
-            }).then(function(results) {
-                console.log("posted")
-            });
+    $http({
+        method: 'GET',
+        url: 'http://localhost:3000/api/users.json',
+    }).then(function(response) {
+        let listOfUsers = response.data;
+        console.log("object with userss", listOfUsers);
+        angular.copy(listOfUsers, userarray)
+    });
+
+    return {
+        getUsers: function() {
+            return userarray;
         }
     }
+
 
 }]);
 
@@ -89,4 +153,4 @@ app.factory('EventService', ['$http', '$location', function($http, $location) {
 
 }]);
 
-},{"./controllers/events":1,"./controllers/login":2,"./controllers/myevents":3}]},{},[4])
+},{"./controllers/events":1,"./controllers/login":2,"./controllers/myevents":3,"./directives/events":4,"./directives/users":5}]},{},[6])
