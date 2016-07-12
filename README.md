@@ -1,6 +1,24 @@
 # VolunteeringApp
 App using Angular.js
 -----planning below
+End points:
+/login
+/events
+/myevents
+
+
+Click events:
+loginClick
+-sends a post request to server
+eventSelect
+-sends a post request to server
+myEventsClick
+-sends a get request to server to "get"
+{
+  eventname: (name of the event they clicked on)
+  name: (name they typed in when logging in to site)
+}
+
 
 Login Logic:
 -Post username to server as name: ""
@@ -21,4 +39,5 @@ Event Page Logic:
 -Current get request is rendering to page
 -
 
-My Events Logic
+My Events Logic:
+-Need to get original login "name" and event "name" that was signed up for and render them both to the page on the click of the /myevents route
