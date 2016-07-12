@@ -17,20 +17,37 @@
 </head>
 
 <body>
-    <nav>
+    <!-- NAV BAR -->
+    <!-- Medium-Up Navigation -->
+    <nav class="top-bar" id="nav-menu">
 
-        <ul>
-    <li><a href="#login">Sign In</a></li>
-    <li><a href="#events">Upcoming Events</a></li>
-    <li><a href="#myevents">My Events</a></li>
-</ul>
-</nav>
+        <!-- Left Nav Section -->
+        <div class="top-bar-left">
+            <ul class="vertical medium-horizontal menu">
+                <li><a href="#login">Sign In</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Nav Section -->
+        <div class="top-bar-right">
+            <ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+                <li class="has-submenu">
+                    <a href="#events">Upcoming Events</a>
+                </li>
+                <li class="has-submenu">
+                    <a href="#myevents">My Events</a>
+
+                </li>
+            </ul>
+        </div>
+
+    </nav>
     <main ng-view></main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
-       <script>
-           $(document).foundation();
-       </script>
+    <script>
+        $(document).foundation();
+    </script>
 
 
 </body>
