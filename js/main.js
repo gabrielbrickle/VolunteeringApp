@@ -2,6 +2,8 @@ let app = angular.module('Volunteer', ['ngRoute']);
 require('./controllers/login')(app);
 require('./controllers/events')(app);
 require('./controllers/myevents')(app);
+require('./directives/events')(app);
+require('./directives/users')(app);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -23,22 +25,39 @@ app.config(['$routeProvider', function($routeProvider) {
 }]);
 
 app.factory('UserService', ['$http', '$location', function($http, $location) {
-    return {
-        postUser: function(person) {
-          console.log(person);
-            $http({
-                url: 'http://localhost:3000/api/users.json',
-                method: 'POST',
-                data: {
-                    name: person,
-                    password: 0,
+    // return {
+    //     postUser: function(person) {
+    //       console.log(person);
+    //         $http({
+    //             url: 'http://localhost:3000/api/users.json',
+    //             method: 'POST',
+    //             data: {
+    //                 name: person,
+    //                 password: 0,
+    //
+    //             },
+    //         }).then(function(results) {
+    //             console.log("posted")
+    //         });
+    //     }
+    // }
+    let userarray = [];
 
-                },
-            }).then(function(results) {
-                console.log("posted")
-            });
+    $http({
+        method: 'GET',
+        url: 'http://localhost:3000/api/users.json',
+    }).then(function(response) {
+        let listOfEvents = response.data;
+        console.log("object with userss", listOfEvents);
+        angular.copy(listOfEvents, eventarray)
+    });
+
+    return {
+        getUsers: function() {
+            return userarray;
         }
     }
+
 
 }]);
 
