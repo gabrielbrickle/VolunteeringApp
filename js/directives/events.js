@@ -1,5 +1,4 @@
 module.exports = function(app) {
-//this is the HTML el name
 app.directive('thingtodo', function () {
     return {
         restrict: 'E',
@@ -14,7 +13,7 @@ app.directive('thingtodo', function () {
 app.directive('signupbutton', function () {
     return {
         restrict: 'E',
-        template: '<button ngClick="">Sign Up </button>',
+        template: '<button ng-click="signUp()">Sign Up </button>',
         replace: true,
     };
 });

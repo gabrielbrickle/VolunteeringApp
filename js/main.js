@@ -45,6 +45,11 @@ app.factory('UserService', ['$http', '$location', function($http, $location) {
     //         });
     //     }
     // }
+    // createUser: function(name,password) {
+    //   username = name;
+    //   console.log(username);
+    // };
+
     let userarray = [];
 
     $http({
@@ -61,8 +66,6 @@ app.factory('UserService', ['$http', '$location', function($http, $location) {
             return userarray;
         }
     }
-
-
 }]);
 
 app.factory('EventService', ['$http', '$location', function($http, $location) {

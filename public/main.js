@@ -3,6 +3,9 @@ module.exports = function(app) {
     app.controller('EventsController', ['EventService', '$scope', '$location', function(EventService, $scope, $location) {
     $scope.eventlist = EventService.getEvents();
     // $scope.eventlist = [];
+    $scope.signUp= function(){
+      console.log("clicked sign up");
+    }
     }]);
 }
 
@@ -10,10 +13,13 @@ module.exports = function(app) {
 module.exports = function(app) {
     app.controller('LoginController', ['UserService', '$scope', '$http', '$location', function(UserService, $scope, $http, $location) {
         $scope.userarray = UserService.getUsers();
+        $scope.name = "";
 
         $scope.loginClick = function() {
-            UserService.postUser($scope.name)
-            console.log('clicked')
+          console.log(`${scope.name} is the username`)
+          // UserService.postUser($scope.name)
+          UserService.createUser($scope.name)
+          $location.path('/events');
         }
 
 
@@ -29,7 +35,6 @@ module.exports = function(app) {
 
 },{}],4:[function(require,module,exports){
 module.exports = function(app) {
-//this is the HTML el name
 app.directive('thingtodo', function () {
     return {
         restrict: 'E',
@@ -44,7 +49,7 @@ app.directive('thingtodo', function () {
 app.directive('signupbutton', function () {
     return {
         restrict: 'E',
-        template: '<button ngClick="">Sign Up </button>',
+        template: '<button ng-click="signUp()">Sign Up </button>',
         replace: true,
     };
 });
@@ -113,6 +118,11 @@ app.factory('UserService', ['$http', '$location', function($http, $location) {
     //         });
     //     }
     // }
+    // createUser: function(name,password) {
+    //   username = name;
+    //   console.log(username);
+    // };
+
     let userarray = [];
 
     $http({
@@ -129,8 +139,6 @@ app.factory('UserService', ['$http', '$location', function($http, $location) {
             return userarray;
         }
     }
-
-
 }]);
 
 app.factory('EventService', ['$http', '$location', function($http, $location) {
